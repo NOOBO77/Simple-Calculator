@@ -11,18 +11,19 @@
 <body>
     <div class="cal">
         <div class="display">
-            <input id="input-box" type="text" placeholder="0">
+            <p>Calculator <span>V.01</span></p>
+            <input id="input-box" type="text" placeholder="0" disabled>
         </div>
 
         <div class="numbers">
             <div class="numbers-row">
                 <button onclick="append('%')">%</button>
                 <button onclick="sq()">x&sup2;</button>
-                <button onclick="clearAll()">C</button>
+                <button onclick="clearAll()" class="clear">C</button>
                 <button onclick="cancel()" class="fa-solid fa-rectangle-xmark can"></button>
             </div>
             <div class="numbers-row">
-                <button onclick="sqrt()">sqrt</button>
+                <button onclick="sqrt()">&#8730;x</button>
                 <button onclick="append('(')">(</button>
                 <button onclick="append(')')">)</button>
                 <button onclick="append('/')">/</button>
@@ -49,7 +50,7 @@
                 <button onclick="reseprocal()">1/x</button>
                 <button onclick="append('0')">0</button>
                 <button onclick="append('.')">.</button>
-                <button onclick="cal()">=</button>
+                <button onclick="cal()" class="equal">=</button>
             </div>
         </div>
     </div>

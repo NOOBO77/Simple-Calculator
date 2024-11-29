@@ -3,11 +3,17 @@ body{
     display: flex;
     justify-content: center;
 }
-
 div.cal{
-    background-color: black;
+    background-color: rgb(69, 69, 69);
     padding: 10px;
     border-radius: 9px;
+}
+p{
+    color: whitesmoke;
+}
+span{
+    display: flex;
+    justify-content: end;
 }
 input{
     border-radius: 5px;
@@ -15,6 +21,7 @@ input{
     padding: 10px;
     background-color: gainsboro;
     width: 213.172px;
+    color: black;
 }
 
 div.numbers{
@@ -25,10 +32,21 @@ button{
     margin-bottom: 5px;
     border-radius: 5px;
     border: none;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
+    background-color: black;
     width: 50px;
+    color: antiquewhite;
 }
 
 button.can{
     height: 44px;
+    background-color: rgb(255, 127, 77);
+}
+
+button.clear{
+    background-color: rgb(255, 60, 60);
+}
+
+button.equal{
+    background-color: rgb(27, 116, 27);
 }
