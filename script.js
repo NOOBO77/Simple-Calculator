@@ -1,4 +1,5 @@
 let string='';
+
 function append(symbol){
     string += symbol;
     document.getElementById('input-box').value=string;
