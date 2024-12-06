@@ -1,5 +1,9 @@
-body{
-    margin: 10%;
+h1{
+    text-align: center;
+    margin-top: 15px;
+}
+div.calculator{
+    margin: 5%;
     display: flex;
     justify-content: center;
 }
@@ -33,7 +37,6 @@ button{
     margin-bottom: 5px;
     border-radius: 5px;
     border: none;
-    /* background-color: gainsboro; */
     background-color: black;
     width: 50px;
     color: antiquewhite;
@@ -50,4 +53,15 @@ button.clear{
 
 button.equal{
     background-color: rgb(27, 116, 27);
+}
+
+p#history{
+    display: none;
+    background-color: rosybrown;
+    text-align: center;
+}
+
+div.his{
+    display: flex;
+    justify-content: center;
 }

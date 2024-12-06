@@ -1,5 +1,7 @@
 let string='';
 
+let history=[];
+
 function append(symbol){
     string += symbol;
     document.getElementById('input-box').value=string;
@@ -7,7 +9,11 @@ function append(symbol){
 
 function cal(){
     try {
-        string=eval(string);
+        let res=eval(string);
+        history.push(`${string} = ${res}`);
+        console.log(history);
+        document.getElementById('history').textContent=history.join(' | ');
+        string=res;
         string=string.toString();
         document.getElementById('input-box').value=string;
     } catch (error) {
@@ -22,17 +28,26 @@ function clearAll(){
 }
 
 function sqrt(){
-    string=Math.sqrt(string);
+    let res=Math.sqrt(string);
+    history.push(`√${string}=${res}`);
+    document.getElementById('history').textContent=history.join(' | ');
+    string=res;
     document.getElementById('input-box').value=string;
 }
 
 function sq(){
-    string=string*string;
+    let res=string*string;
+    history.push(`${string}²=${res}`);
+    document.getElementById('history').textContent=history.join(' | ');
+    string=res;
     document.getElementById('input-box').value=string;
 }
 
 function reseprocal(){
-    string=1/string;
+    let res=1/string;
+    history.push(`1/${string}=${res}`);
+    document.getElementById('history').textContent=history.join(' | ');
+    string=res;
     document.getElementById('input-box').value=string;
 }
 
@@ -49,3 +64,17 @@ function kbdevent(event){
 }
 
 document.addEventListener('keypress', kbdevent);
+
+let btn_his=document.getElementById('history-btn');
+let his=document.getElementById('history');
+
+function toggleHistory(){
+    if(his.style.display === 'none' || his.style.display === ''){
+        his.style.display="block";
+        btn_his.textContent="Hide History";
+    }
+    else{
+        his.style.display="none";
+        btn_his.textContent="Show History";
+    }
+}
