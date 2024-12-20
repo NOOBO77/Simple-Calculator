@@ -11,7 +11,6 @@ function cal(){
     try {
         let res=eval(string);
         history.push(`${string} = ${res}`);
-        console.log(history);
         document.getElementById('history').textContent=history.join(' | ');
         string=res;
         string=string.toString();
@@ -57,13 +56,25 @@ function cancel(){
 }
 
 function kbdevent(event){
-    const allowed_keys=['+','-','/','(',')','*'];
-    if(allowed_keys.includes(event.key) || !isNaN(event.key)){
+    const allowed_keys=['+','-','/','(',')','*','Backspace','Enter'];
+
+    if(allowed_keys.includes(event.key)){
+        if(event.key==='Enter'){
+            cal();
+        }
+        else if(event.key==='Backspace'){
+            cancel();
+        }
+        else{
+            append(event.key);
+        }
+    }
+    else if(!isNaN(event.key)){
         append(event.key);
     }
 }
 
-document.addEventListener('keypress', kbdevent);
+document.addEventListener('keydown', kbdevent);
 
 let btn_his=document.getElementById('history-btn');
 let his=document.getElementById('history');
